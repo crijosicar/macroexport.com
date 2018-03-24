@@ -25,7 +25,7 @@
                          data-bgparallax="1" >
                     <?php if(isset($item['titulo']) && $item['titulo'] != ""){ ?>
                     <div class="tp-caption sfr tp-resizeme carpenters-h1" 
-                        data-x="0" 
+                        data-x="15" 
                         data-hoffset="690" 
                         data-y="200" 
                         data-voffset="160" 
@@ -36,9 +36,9 @@
                     <?php } ?>
                     <?php if(isset($item['descripcion']) && $item['descripcion'] != ""){ ?>
                     <div class="tp-caption sfb tp-resizeme carpenters-p" 
-                        data-x="0" 
+                        data-x="15" 
                         data-hoffset="500" 
-                        data-y="300" 
+                        data-y="270" 
                         data-voffset="470" 
                         data-whitespace="nowrap"
                         data-start="1200"> 
@@ -47,7 +47,7 @@
                     <?php } ?>
                     <?php if(isset($item['boton']) && $item['boton'] != ""){ ?>
                     <div class="tp-caption sfb tp-resizeme carpenters-b" 
-                        data-x="0" 
+                        data-x="15" 
                         data-hoffset="690" 
                         data-y="350" 
                         data-voffset="555" 
