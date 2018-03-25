@@ -25,8 +25,7 @@ while (have_posts()) : the_post();
     </section>
     <?php
     $categoria = get_the_category();
-    var_dump(get_the_ID());
-    wp_die();
+    
     if ($categoria[0]->name == "pagina") {
         $tipo_pagina = get_field('tipo_de_pagina', get_the_ID());
         get_template_part('template-parts/content', $tipo_pagina);

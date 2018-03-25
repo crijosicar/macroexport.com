@@ -12,21 +12,25 @@
         <div class="row">
             <?php $especificaciones = get_field('especificaciones', get_the_ID()); ?>
             <div class="col-sm-12 projects-description">
+                <?php if(isset($especificaciones[0]['titulo']) && $especificaciones[0]['titulo'] != ""){ ?>
                 <div class="row m0 section_header project-top">
                    <h2><?php echo $especificaciones[0]['titulo']; ?></h2>
                    <p><?php echo $especificaciones[0]['descripcion']; ?></p>                 
                 </div>
+                <?php } ?>
+                <?php if(isset($especificaciones[1]['titulo']) && $especificaciones[1]['titulo'] != ""){ ?>
                 <div class="projects-description-text">
                     <h3><?php echo $especificaciones[1]['titulo']; ?></h3>
                     <p><?php echo $especificaciones[1]['descripcion']; ?></p>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Projects -->
-<section class="row latest_projects sectpad projects-1">
+<section class="row latest_projects projects-1" style="padding-bottom: 80px;">
     <?php $trabajosRealizados = get_field('trabajos_realizados', get_the_ID()); 
     foreach ($trabajosRealizados as $key => $trabajosRealizado) {?>
     <div class="container">

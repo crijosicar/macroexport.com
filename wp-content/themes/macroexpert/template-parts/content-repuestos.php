@@ -7,6 +7,10 @@
  * @package macroexpert
  */
 ?>
+<?php 
+    $catname = get_query_var('category') ? get_query_var('category') : "todo"; 
+    $catname = str_replace("_", " ", $catname);
+?>
 <section class="row blog_content">
     <div class="container">
         <div class="row sectpad">
@@ -42,10 +46,9 @@
                             <ul class="nav categories">
                                 <?php
                                 $categorias = get_field('listado_de_categorias', get_the_ID());
-                                foreach ($categorias as $key => $categoria) {
-                                    ?>
+                                foreach ($categorias as $key => $categoria) { ?>
                                     <li>
-                                        <a href="<?php echo add_query_arg(['category' => $categoria['value']], '/repuestos') ?>">
+                                        <a href="<?php echo add_query_arg(['category' => $categoria['value']], '/repuestos') ?>" style="<?php if(strtolower($categoria['value']) == strtolower(str_replace(" ","_", $catname))) echo 'color: #bd091c' ?>">
                                             <i class="fa fa-angle-right"></i><?php echo $categoria['label']; ?>
                                         </a>
                                     </li>
@@ -58,10 +61,6 @@
             </div>
             <div class="blog_section col-lg-8 shop-page-content">
                 <div class="row m0 section_header color">
-                    <?php 
-                        $catname = get_query_var('category') ? get_query_var('category') : "todo"; 
-                        $catname = str_replace("_", " ", $catname);
-                    ?>
                     <h2><?php echo get_field('titulo_seccion_productos', get_the_ID()). " - ". $catname; ?></h2>
                 </div> 
                 <br>

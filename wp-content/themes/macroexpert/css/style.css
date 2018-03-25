@@ -49,6 +49,11 @@ section.row, header.row, footer.row {
   padding: 80px 0;
 }
 
+
+.sectpad_btm {
+  padding-bottom: 80px 0 !important;
+}
+
 .color h2 {
   color: #242424 !important;
 }
