@@ -80,7 +80,7 @@
                     </div>
                     <ul class="content-list">
                         <?php foreach ($item['listado_de_servicios'] as $idx => $servicio) { ?>
-                            <li><a href="<?php echo get_post_permalink($servicio['servicio']->ID); ?>"><?php echo $servicio['servicio']->post_title; ?></a></li>
+                        <li class="truncate"><a href="<?php echo get_post_permalink($servicio['servicio']->ID); ?>"><?php echo $servicio['servicio']->post_title; ?></a></li>
                         <?php } ?>
                     </ul>
                     <div class="content-image">
@@ -189,7 +189,7 @@
                 <h3><?php echo $tiposMantenimiento['titulo_listado'] ?></h3>
                 <ul class="nav">
                     <?php foreach ($tiposMantenimiento['mantenimientos'] as $key => $mantenimiento) { ?>
-                        <li><?php echo $mantenimiento['mantenimiento'] ?></li>
+                    <li><i><?php echo $mantenimiento['mantenimiento'] ?></i></li>
                     <?php } ?> 
                 </ul>
             </div>
@@ -206,21 +206,23 @@ if (count($suministrosEnPromocion)) :
         <div class="container">
             <?php foreach ($suministrosEnPromocion as $key => $suministroEnPromocion) { ?>
                 <div class="row m0 section_header">
-                    <h2><?php echo $suministroEnPromocion['titulo'] ?></h2> 
+                    <h2><?php echo $suministroEnPromocion['titulo']; ?></h2> 
                 </div>
                 <div class="row latest-content">
                     <?php foreach ($suministroEnPromocion['suministros'] as $key => $suministro) { ?>
                         <div class="col-sm-4 clo-xs-12 latest">
                             <div class="row m0 latest-image">
-                                <a href="blog-details.html"><img src="<?php echo get_field('imagen_promocion', $repuesto['repuesto']->ID); ?>" alt=""></a>
+                                <a href="<?php echo get_permalink($suministro['suministro']->ID); ?>">
+                                    <img src="<?php echo get_field('imagen_promocion', $$suministro['suministro']->ID); ?>" alt="">
+                                </a>
                             </div>
                             <div class="latest-news-text">
-                                <a href="<?php echo get_post_permalink($repuesto['repuesto']->ID); ?>">
-                                    <h4><?php echo $repuesto['repuesto']->post_title; ?></h4>
+                                <a href="<?php echo get_permalink($suministro['suministro']->ID); ?>">
+                                    <h4><?php echo $suministro['suministro']->post_title; ?></h4>
                                 </a>
-                                <p><?php echo get_field('descripcion_destacado', $repuesto['repuesto']->ID); ?></p>
+                                <p><?php echo get_field('descripcion_destacado', $suministro['suministro']->ID); ?></p>
                                 <div class="row m0 latest-meta">
-                                    <a class="read_more" href="<?php echo get_post_permalink($repuesto['repuesto']->ID); ?>">
+                                    <a class="read_more" href="<?php echo get_permalink($suministro['suministro']->ID); ?>">
                                         + Info
                                     </a>
                                 </div>

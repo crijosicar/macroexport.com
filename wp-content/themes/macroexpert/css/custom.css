@@ -306,3 +306,11 @@ footer.row .footer-top {
   -webkit-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
+
+.truncate {
+  width: calc(100% - 10px) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #BD081C;
+}
