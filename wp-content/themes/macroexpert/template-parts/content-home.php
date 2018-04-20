@@ -80,7 +80,9 @@
                     </div>
                     <ul class="content-list">
                         <?php foreach ($item['listado_de_servicios'] as $idx => $servicio) { ?>
-                        <li class="truncate"><a href="<?php echo get_post_permalink($servicio['servicio']->ID); ?>"><?php echo $servicio['servicio']->post_title; ?></a></li>
+                        <li class="truncate">
+                            <a href="<?php echo get_post_permalink($servicio['servicio']->ID); ?>"><?php echo $servicio['servicio']->post_title; ?></a>
+                        </li>
                         <?php } ?>
                     </ul>
                     <div class="content-image">
@@ -126,7 +128,7 @@
 <!-- Projects -->
 <section class="row latest_projects sectpad projects-1">
     <?php $trabajosRealizados = get_field('trabajos_realizados', get_the_ID()); 
-    foreach ($trabajosRealizados as $key => $trabajosRealizado) {?>
+    foreach ($trabajosRealizados as $key => $trabajosRealizado) { ?>
     <div class="container">
         <div class="row m0 section_header">
             <h2><?php echo $trabajosRealizado['titulo']; ?></h2>
@@ -200,8 +202,7 @@
 <!-- latest-news-area -->
 <?php
 $suministrosEnPromocion = get_field('suministros_en_promocion', get_the_ID());
-if (count($suministrosEnPromocion)) :
-    ?>
+if (count($suministrosEnPromocion)) : ?>
     <section class="row sectpad latest-news-area">
         <div class="container">
             <?php foreach ($suministrosEnPromocion as $key => $suministroEnPromocion) { ?>

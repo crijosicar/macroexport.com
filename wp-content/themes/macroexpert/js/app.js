@@ -47,7 +47,7 @@ function replaceUrlParamByName(paramName, paramValue, url){
         return url.replace(pattern,'$1' + paramValue + '$2');
     }
     url = url.replace(/\?$/,'');
-    return url + (url.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue 
+    return url + (url.indexOf('?')>0 ? '&' : '?') + paramName + '=' + paramValue; 
 }
 
 

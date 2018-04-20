@@ -35,6 +35,13 @@
     </head>
 
     <body>
+        <?php
+        $subsites = get_sites();
+            $subsite_id_es = get_object_vars($subsites[0])["blog_id"];
+            $subsite_id_en = get_object_vars($subsites[1])["blog_id"];
+            $subsite_link_es = get_blog_details($subsite_id_es)->siteurl;
+            $subsite_link_en = get_blog_details($subsite_id_en)->siteurl;
+        ?>
         <header class="row header navbar-static-top" id="main_navbar">
             <div class="container">
                 <div class="row m0 social-info">
@@ -112,6 +119,14 @@
                                         <a href="<?php echo get_post_permalink($menuitem['pagina']->ID); ?>"><?php echo $menuitem['menu'] ?></a>
                                     </li>
                                 <?php } ?>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="<?php echo $subsite_link_es;  ?>">Esp</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $subsite_link_en; ?>">Eng</a>
+                                </li>
                             </ul>
                         </div>
                     </div><!-- /.navbar-collapse -->

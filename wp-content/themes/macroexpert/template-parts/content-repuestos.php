@@ -148,27 +148,27 @@
                 $productosquery = new WP_Query($args);
                                 
                 // The Loop
-                if ($productosquery->have_posts()) {
-                    ?>
-                    <div class="row">
+                if ($productosquery->have_posts()) {?>
+                    <!--div class="row"-->
                         <?php while ($productosquery->have_posts()) {
-                            $productosquery->the_post(); ?>
+                            $productosquery->the_post(); $count++; 
+                            $index = $productosquery->current_post + 1;?>
                             <!--Start single shop item-->
-                            <div class="col-lg-4 col-md-4 single-shop-item">
-                                <img src="<?php echo get_field('imagen_tienda', get_the_ID()); ?>" alt="">
-                                <div class="meta">
-                                    <h4><?php echo get_the_title() ?></h4>
-                                    <span><?php echo get_field('descripcion_destacado', get_the_ID()); ?></span>
-                                    <a href="<?php echo get_post_permalink(get_the_ID()); ?>">
-                                        <div class="cart-button">
-                                            <p>+ Info</p>
-                                        </div>
-                                    </a>
+                                <div class="col-lg-4 col-md-4 single-shop-item">
+                                    <img src="<?php echo get_field('imagen_tienda', get_the_ID()); ?>" alt="">
+                                    <div class="meta">
+                                        <h4><?php echo get_the_title() ?></h4>
+                                        <span><?php echo get_field('descripcion_destacado', get_the_ID()); ?></span>
+                                        <a href="<?php echo get_post_permalink(get_the_ID()); ?>">
+                                            <div class="cart-button">
+                                                <p>+ Info</p>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
                             <!--End single shop item-->
                         <?php } ?>    
-                    </div>
+                    <!--/div-->
                     <div class="row">
                     <?php echo custom_paginate($productosquery->max_num_pages); ?>  
                     </div>
